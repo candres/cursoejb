@@ -1,8 +1,9 @@
 package ejbs;
 
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
+import javax.ejb.Remove; // Added
 
-@Stateless
+@Stateful
 public class ContadorBean implements ContadorBeanRemote {
 
 	private int count;	
@@ -30,5 +31,11 @@ public class ContadorBean implements ContadorBeanRemote {
 	@Override
 	public String getName() {
 		return name;
+	}
+
+	@Remove // Added
+	public void remove() { // Added
+		// This method can be empty. Its purpose is to signal the container
+		// that this instance can be discarded.
 	}
 }
