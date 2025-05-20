@@ -12,4 +12,5 @@ public interface ContadorBeanRemote {
 	public void setName(String name);
 	
 	public String getName();
+	public void remove(); // Added this line
 }
